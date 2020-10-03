@@ -1,0 +1,64 @@
+<mat-sidenav-container style="height: 100%" [hasBackdrop]="true">
+  <mat-sidenav id="sidenav">
+    <app-profile></app-profile>
+    <mat-divider class="mt-2"></mat-divider>
+    <mat-selection-list [multiple]="false" class="pt-0">
+      <div (click)="navigateToHome()">
+        <mat-list-option>
+          <mat-list-item>
+            <mat-icon mat-list-icon>home</mat-icon>
+            <div mat-line>Home</div>
+          </mat-list-item>
+        </mat-list-option>
+      </div>
+      <div (click)="navigateToProfile()">
+        <mat-list-option>
+          <mat-list-item>
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <div mat-line>Profile</div>
+          </mat-list-item>
+        </mat-list-option>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-selection-list>
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar
+      class="mat-elevation-z7 mat-toolbar text-center mx-auto pl-0"
+      style="background-color: white"
+    >
+      <button
+        mat-icon-button
+        class="example-icon"
+        style="outline-color: white"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a class="mx-auto" style="margin-top: 5px">
+        <img
+          src="../assets//rsz_ivy_logo_2016.png"
+          width="70%"
+          height="70%"
+          alt=""
+          id="logo"
+        />
+      </a>
+    </mat-toolbar>
+    <mat-progress-bar mode="indeterminate" *ngIf="isProgress"></mat-progress-bar>
+    <mat-toolbar-row
+      *ngIf="isOffline"
+      class="mat-elevation-z7 mat-toolbar text-center mx-auto pl-0 bg-danger"
+      style="background-color: white; position: absolute; z-index: 1"
+    >
+      <div class="text-center mx-auto">
+        <mat-error style="color: white; font-size: 12px"
+          >Device Offline</mat-error
+        >
+      </div>
+    </mat-toolbar-row>
+    <!-- <app-survey-card></app-survey-card> -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+<div class="row" *ngIf="User!=null">
+  <div style="width: 70%; height: 70%" class="col ml-1 pr-0 pt-1 my-auto">
+    <img
+      [src]="User.photoUrl"
+      class="img-fluid "
+      width="90%"
+      height="90%"
+      style="border-radius: 50%"
+    />
+  </div>
+  <div class="col-9 pl-0 pr-0  text-left my-auto">
+    <h4
+      style="color:#494949; margin-bottom: 0px"
+      class="mat-subheading-1"
+    >
+     {{User.name}}
+    </h4>
+    <h5
+      style="color: #9ea7aa; margin-bottom: 0px"
+      class="mat-caption"
+    >
+       {{User.email}}
+    </h5>
+  </div>
+</div>

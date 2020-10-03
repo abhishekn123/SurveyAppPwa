@@ -1,0 +1,14 @@
+
+<div class="container mt-2">
+  <mat-card class="pb-1 mt-2" matRipple style="border-left-color: #aeea00;border-left-width: 5px;border-left-style: solid;">
+    <div class="row">
+      <mat-card-content class="pl-2 pr-2"><span>{{Index+1}} ) </span>{{SurveyMaster.sM_Name}}</mat-card-content>
+    </div>
+    <div class="row">
+      <mat-chip-list >
+      <mat-chip  [color]="GetStatus().color" selected class="m-1 ml-2"  >{{  GetStatus().status }}</mat-chip>
+    </mat-chip-list>
+    <mat-card-subtitle class="ml-auto mt-2 pr-2">Ends on  {{SurveyMaster.endDate|date:'MMM d ,h:mm a'}}</mat-card-subtitle>
+    </div>
+  </mat-card>
+</div>
